@@ -21,10 +21,10 @@ class WhatController extends Controller
                     return redirect()->route('MEjemplo')->with('alert',['Ingresado correctamente',''. $answerCode,'success']);
                     break;
                 case '45000':
-                    # code...
+                    dd($answerCode);
                     break;
-                    case '45001':
-
+                case '45001':
+                    dd($answerCode);
                         break;
                 default:
                     return redirect()->route('MEjemplo')->with('alert', ['Error', ''. $answerCode, 'error']);
