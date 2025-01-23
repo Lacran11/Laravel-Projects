@@ -26,15 +26,19 @@ class WhatController extends Controller
             switch ($answerCode) {
                 case '200':
                     return redirect()->route('MEjemplo')->with('alert',['Ingresado correctamente',''. $answerCode,'success']);
+                    //return redirect()->back()->withInput()->with('alert',['Ingresado correctamente',''. $answerCode,'success']);
                     break;
                 case '45000':
-                    return redirect()->route('MEjemplo')->with('alert',['Correo ya existente','No puede ingresar un correo ya existente'. $answerCode,'warning']);
+                    //return redirect()->route('MEjemplo')->with('alert',['Correo ya existente','No puede ingresar un correo ya existente'. $answerCode,'warning']);
+                    return redirect()->back()->withInput()->with('alert',['Correo ya existente','No puede ingresar un correo ya existente'. $answerCode,'warning']);
                     break;
                     case '45001':
-                        return redirect()->route('MEjemplo')->with('alert',['Numero de celular ya existente','No puede ingresar un numero de telefono ya existente'. $answerCode,'warning']);
+                        //return redirect()->route('MEjemplo')->with('alert',['Numero de celular ya existente','No puede ingresar un numero de telefono ya existente'. $answerCode,'warning']);
+                        return redirect()->back()->withInput()->with('alert',['Numero de celular ya existente','No puede ingresar un numero de telefono ya existente'. $answerCode,'warning']);
                         break;
                 default:
-                    return redirect()->route('MEjemplo')->with('alert', ['Error', ''. $answerCode, 'error']);
+                    //return redirect()->route('MEjemplo')->with('alert', ['Error', ''. $answerCode, 'error']);
+                    return redirect()->back()->withInput()->with('alert', ['Error', ''. $answerCode, 'error']);
                     break;
             }            //code...
         } catch (\Exception $th) {
