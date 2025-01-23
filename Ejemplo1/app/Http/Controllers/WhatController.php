@@ -21,20 +21,20 @@ class WhatController extends Controller
         try {
             $apidata = $request->validated();
             $respuesta = Http::post('http://192.168.1.155/v4/Portal/insertUserPruebas',$apidata);
-            //$answerCode = $respuesta->json();
+            $answerCode = $respuesta->json();
 
-            switch ($respuesta) {
+            switch ($answerCode) {
                 case '200':
-                    return redirect()->route('MEjemplo')->with('alert',['Ingresado correctamente',''. $respuesta,'success']);
+                    return redirect()->route('MEjemplo')->with('alert',['Ingresado correctamente',''. $answerCode,'success']);
                     break;
                 case '45000':
-                    dd($respuesta);
+                    return redirect()->route('MEjemplo')->with('alert',['Correo ya existente','No puede ingresar un correo ya existente'. $answerCode,'warning']);
                     break;
-                case '45001':
-                    dd($respuesta);
+                    case '45001':
+                        return redirect()->route('MEjemplo')->with('alert',['Numero de celular ya existente','No puede ingresar un numero de telefono ya existente'. $answerCode,'warning']);
                         break;
                 default:
-                    return redirect()->route('MEjemplo')->with('alert', ['Error', ''. $respuesta, 'error']);
+                    return redirect()->route('MEjemplo')->with('alert', ['Error', ''. $answerCode, 'error']);
                     break;
             }            //code...
         } catch (\Exception $th) {

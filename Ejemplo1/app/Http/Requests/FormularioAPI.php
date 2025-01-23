@@ -39,6 +39,11 @@ class FormularioAPI extends FormRequest
             'apellidoMat.required' => 'El Apellido materno es mandatorio',
             'correo.required' => 'El correo electronico es mandatorio',
             'celular.required' => 'El celular electronico es mandatorio',
+            'nombre.regex' => 'El nombre es invalido',
+            'apellidoPat.regex' => 'El Apellido paterno es invalido',
+            'apellidoMat.regex' => 'El Apellido materno es invalido',
+            'correo.regex' => 'El correo electronico es invalido',
+            'celular.regex' => 'El celular es invalido',
         ];
     }
 }
