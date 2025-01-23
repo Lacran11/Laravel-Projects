@@ -36,6 +36,14 @@ const entradas = [
     }
 ];
 
+//Limita la cantidad de datos ingresados en campo de Celular
+const input = document.getElementById('celular');
+input.addEventListener('input', function(event) {
+    if (this.value.length > 10) {
+        this.value = this.value.slice(0, 10);
+    }
+});
+
 document.addEventListener('DOMContentLoaded',function () {
     const form = document.getElementById('formularioDatos');
 
@@ -44,7 +52,8 @@ document.addEventListener('DOMContentLoaded',function () {
         // Validación en tiempo real mientras se escribe
     entradas.forEach(element => {
         const inputElement = document.getElementById(element.id);
-
+        const errorElement = document.getElementById('error' + element.id.charAt(0).toUpperCase() + element.id.slice(1));
+        console.log(errorElement);
         if (inputElement) {
             inputElement.addEventListener("input", (e) => {
                 let value = e.target.value;
@@ -57,12 +66,14 @@ document.addEventListener('DOMContentLoaded',function () {
                     e.target.value = newValue;
                     inputElement.classList.remove('is-valid');
                     inputElement.classList.add('is-invalid');
+                    errorElement.style.display = 'block';
                 } else {
                     /*El elemento es valido y si ya se habia
                     un caracter invalido antes se oculta el
                     mejensaje de error */
                     inputElement.classList.remove('is-invalid');
                     inputElement.classList.add('is-valid');
+                    errorElement.style.display = 'none';
                 }
             });
         }
