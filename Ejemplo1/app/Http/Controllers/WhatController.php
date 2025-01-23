@@ -26,8 +26,8 @@ class WhatController extends Controller
             $answerCode = $respuesta->json();
             switch ($answerCode) {
                 case '200':
-                    return redirect()->route('MEjemplo')->with('alert',['Ingresado correctamente',''. $answerCode,'success']);
                     Mail::to('lacran119@gmail.com')->send(new mailController($apidata));
+                    return redirect()->route('MEjemplo')->with('alert',['Ingresado correctamente',''. $answerCode,'success']);
 
                     break;
                 case '45000':

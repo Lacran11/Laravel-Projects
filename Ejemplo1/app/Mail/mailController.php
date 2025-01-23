@@ -49,6 +49,7 @@ class mailController extends Mailable
     {
         return new Content(
             view: 'emails.mailForm',
+            with:['formData' => $this->formData]
         );
     }
 
