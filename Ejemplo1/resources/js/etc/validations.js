@@ -44,12 +44,12 @@ const entradas = [
 ];
 
 //Limita la cantidad de datos ingresados en campo de Celular
-const input = document.getElementById('celular');
+/* const input = document.getElementById('celular');
 input.addEventListener('input', function(event) {
     if (this.value.length > 10) {
         this.value = this.value.slice(0, 10);
     }
-});
+}); */
 
 document.addEventListener('DOMContentLoaded',function () {
     const form = document.getElementById('formularioDatos');
