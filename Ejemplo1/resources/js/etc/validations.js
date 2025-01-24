@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded',function () {
     entradas.forEach(element => {
         const inputElement = document.getElementById(element.id);
         const errorElement = document.getElementById('error' + element.id.charAt(0).toUpperCase() + element.id.slice(1));
-        console.log(errorElement);
         if (inputElement) {
             inputElement.addEventListener("input", (e) => {
                 let value = e.target.value;
