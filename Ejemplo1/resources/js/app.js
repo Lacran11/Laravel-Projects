@@ -1,4 +1,3 @@
-import './bootstrap.js';
-import './etc/alertas.js';
 import 'bootstrap';
+import './etc/alertas.js';
 import './etc/validations.js';
