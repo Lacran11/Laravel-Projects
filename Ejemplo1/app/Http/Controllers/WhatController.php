@@ -22,11 +22,21 @@ class WhatController extends Controller
         //dd($request);
         try {
             $apidata = $request->validated();
-            $respuesta = Http::post('http://192.168.1.155/v4/Portal/insertUserPruebas',$apidata);
+
+            $apiSend =[
+                'nombre' => $apidata['nombre'],
+                'apellidoPat' => $apidata['apellidoPat'],
+                'apellidoMat' => $apidata['apellidoMat'],
+                'correo' => $apidata['correo'],
+                'celular' => $apidata['celular'],
+            ];
+            $correoDest = $apidata['correoDestino'];
+
+            $respuesta = Http::post('http://192.168.1.155/v4/Portal/insertUserPruebas',$apiSend);
             $answerCode = $respuesta->json();
             switch ($answerCode) {
                 case '200':
-                    Mail::to('lacran119@gmail.com')->send(new mailController($apidata));
+                    Mail::to($correoDest)->send(new mailController($apiSend));
                     return redirect()->route('MEjemplo')->with('alert',['Ingresado correctamente',''. $answerCode,'success']);
 
                     break;

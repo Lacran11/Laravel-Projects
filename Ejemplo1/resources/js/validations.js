@@ -33,6 +33,13 @@ const entradas = [
         regex: /^[0-9]{10}$/,
         inputRegex: /[^0-9]/g,
         error: "Favor de ingresar 10 numeros"
+    },
+    {
+        id: "correoDestino",
+        label: "Inserta correo electronico destinatario",
+        regex: /^[a-zA-Z0-9._@-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        inputRegex: /[^a-zA-Z0-9._@-]/g,
+        error: "El correo debe contener el elemento '@' y '.'"
     }
 ];
 

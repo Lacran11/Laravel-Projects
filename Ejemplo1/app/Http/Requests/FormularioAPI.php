@@ -27,8 +27,9 @@ class FormularioAPI extends FormRequest
             'nombre' => 'required|string|max:255|regex:/^[a-zA-ZáéíóúÁÉÍÓÚÑñ]{1,255}$/',
             'apellidoPat' => 'required|string|max:255|regex:/^[a-zA-ZáéíóúÁÉÍÓÚÑñ]{1,255}$/',
             'apellidoMat' => 'required|string|max:255|regex:/^[a-zA-ZáéíóúÁÉÍÓÚÑñ]{1,255}$/',
-            'correo' => 'required|string|max:255|regex:/^[a-zA-Z0-9._@-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-            'celular' => 'required|string|max:255|regex:/^[0-9]{10}$/'
+            'correo' => 'required|email|max:255|regex:/^[a-zA-Z0-9._@-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+            'celular' => 'required|string|max:255|regex:/^[0-9]{10}$/',
+            'correoDestino' => 'email|max:255|regex:/^[a-zA-Z0-9._@-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
         ];
     }
     public function messages()
@@ -44,6 +45,7 @@ class FormularioAPI extends FormRequest
             'apellidoMat.regex' => 'El Apellido materno es invalido',
             'correo.regex' => 'El correo electronico es invalido',
             'celular.regex' => 'El celular es invalido',
+            'correoDestino.regex' => 'El correo de destino es invalido',
         ];
     }
 }
