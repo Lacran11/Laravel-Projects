@@ -1,5 +1,4 @@
 import Swal from 'sweetalert2';
-
 if (window.Laravel && window.Laravel.alert) {
     var mensaje = window.Laravel.alert;
     console.log(mensaje);
@@ -9,4 +8,7 @@ if (window.Laravel && window.Laravel.alert) {
         icon: mensaje[2]
 
     });
+}else{
+    console.log('No hay alertas');
 }
+

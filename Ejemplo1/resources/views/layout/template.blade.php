@@ -7,17 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('Titulo')</title>
      <!-- Styles / Scripts -->
-     {{--@vite(['resources/css/app.css', 'resources/js/app.js'])--}}
-     <style>
+    <style>
         {!! Vite::content('resources/css/app.css') !!}
     </style>
     <script>
-        {!! Vite::content('resources/js/app.js') !!}
 
         window.Laravel = {!! json_encode([
-            'alert' => session('alert') ? : null
+            'alert' => session('alert') ?: null
         ]) !!};
+
+        {!! Vite::content('resources/js/app.js') !!}
     </script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @yield('head')
 </head>
 <body class="bg-secondary">

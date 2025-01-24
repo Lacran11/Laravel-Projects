@@ -43,11 +43,11 @@ class WhatController extends Controller
                     break;
                 case '45000':
 
-                    return redirect()->back()->withInput()->with('alert',['Correo ya existente','No puede ingresar un correo ya existente'. $answerCode,'warning']);
+                    return redirect()->back()->withInput()->with('alert',['Correo ya existente','No puede ingresar un correo ya existente'. $answerCode,'error']);
                     break;
                  case '45001':
 
-                    return redirect()->route('MEjemplo')->withInput()->with('alert',['Numero de celular ya existente','No puede ingresar un numero de telefono ya existente'. $answerCode,'warning']);
+                    return redirect()->route('MEjemplo')->withInput()->with('alert',['Numero de celular ya existente','No puede ingresar un numero de telefono ya existente'. $answerCode,'error']);
                     break;
                 default:
 

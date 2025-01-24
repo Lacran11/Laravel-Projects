@@ -16,7 +16,7 @@
         <div >
             <label class="form-label" for="">Inserta apellido paterno</label>
             <input class="form-control" type="text" name="apellidoPat" id="apellidoPat" value="{{ old('apellidoPat')}}" required><br>
-            <div id="errorApellidoMat" style="display: none;" class="error-message">Solo se permiten letras y acentos</div><br>
+            <div id="errorApellidoPat" style="display: none;" class="error-message">Solo se permiten letras y acentos</div><br>
             @error('apellidoPat')
                 <p >{{$message}}</p>
             @enderror
@@ -24,7 +24,7 @@
         <div >
             <label class="form-label" for="">Inserta apellido materno</label>
             <input class="form-control" type="text" name="apellidoMat" id="apellidoMat" value="{{ old('apellidoMat')}}" required><br>
-            <div id="errorApellidoPat" style="display: none;" class="error-message">Solo se permiten letras y acentos</div><br>
+            <div id="errorApellidoMat" style="display: none;" class="error-message">Solo se permiten letras y acentos</div><br>
             @error('apellidoMat')
                 <p >{{$message}}</p>
             @enderror
