@@ -3,7 +3,7 @@
 @section('Titulo', 'Ejempllo')
 @section('contenido')
 <div class="d-flex justify-content-center text-white" >
-    <form class="w-50 m-3 needs-validation" id="formularioDatos" action="{{route('Boton')}}" method="post">
+    <form class="w-25 m-3 needs-validation" id="formularioDatos" action="{{route('Boton')}}" method="post">
         @csrf
         <div>
             <label class="form-label" for="nombre">Inserta nombre</label>
