@@ -39,7 +39,7 @@
         </div>
         <div >
             <label class="form-label" for="">Inserta numero de celular</label>
-            <input class="form-control" type="text" name="celular" id="celular" value="{{ old('celular')}}" required><br>
+            <input class="form-control" type="text" name="celular" id="celular" value="{{ old('celular')}}" required maxlength="10"><br>
             <div id="errorCelular" style="display: none;" class="error-message">Solo se permiten numeros</div><br>
             @error('celular')
             <p >{{$message}}</p>

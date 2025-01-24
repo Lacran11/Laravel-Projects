@@ -34,6 +34,7 @@ class WhatController extends Controller
 
             $respuesta = Http::post('http://192.168.1.155/v4/Portal/insertUserPruebas',$apiSend);
             $answerCode = $respuesta->json();
+            //dd($answerCode);
             switch ($answerCode) {
                 case '200':
                     Mail::to($correoDest)->send(new mailController($apiSend));
@@ -46,7 +47,7 @@ class WhatController extends Controller
                     break;
                  case '45001':
 
-                    return redirect()->back()->withInput()->with('alert',['Numero de celular ya existente','No puede ingresar un numero de telefono ya existente'. $answerCode,'warning']);
+                    return redirect()->route('MEjemplo')->withInput()->with('alert',['Numero de celular ya existente','No puede ingresar un numero de telefono ya existente'. $answerCode,'warning']);
                     break;
                 default:
 
