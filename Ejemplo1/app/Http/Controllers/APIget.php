@@ -12,7 +12,7 @@ class APIget extends Controller
     public function recuperarDatos(){
 
         $API_URL = env('API_ENDPOINT_CARRUSEL');
-        $respuesta = Http::get($API_URL);
+        $respuesta = Http::get('http://192.168.1.155/v4/Portal/ListaCarrusel');
 
         if ($respuesta->successful()) {
 
